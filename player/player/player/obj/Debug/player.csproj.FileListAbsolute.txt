@@ -1,0 +1,11 @@
+C:\Users\icrew\adaptPlayer\player\player\player\bin\Debug\player.exe.config
+C:\Users\icrew\adaptPlayer\player\player\player\bin\Debug\player.exe
+C:\Users\icrew\adaptPlayer\player\player\player\bin\Debug\player.pdb
+C:\Users\icrew\adaptPlayer\player\player\player\obj\Debug\player.csproj.AssemblyReference.cache
+C:\Users\icrew\adaptPlayer\player\player\player\obj\Debug\player.csproj.SuggestedBindingRedirects.cache
+C:\Users\icrew\adaptPlayer\player\player\player\obj\Debug\player.Form1.resources
+C:\Users\icrew\adaptPlayer\player\player\player\obj\Debug\player.Properties.Resources.resources
+C:\Users\icrew\adaptPlayer\player\player\player\obj\Debug\player.csproj.GenerateResource.cache
+C:\Users\icrew\adaptPlayer\player\player\player\obj\Debug\player.csproj.CoreCompileInputs.cache
+C:\Users\icrew\adaptPlayer\player\player\player\obj\Debug\player.exe
+C:\Users\icrew\adaptPlayer\player\player\player\obj\Debug\player.pdb
