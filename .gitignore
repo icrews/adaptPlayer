@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+/.vs/adaptPlayer/FileContentIndex/1013dec3-4807-48c2-976a-de2b7b618d8d.vsidx
+/.vs/adaptPlayer/FileContentIndex/44d5c793-c48f-4887-919b-c5b67218effe.vsidx
+*.vsidx
+/.vs/adaptPlayer/FileContentIndex/write.lock
