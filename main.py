@@ -1,10 +1,62 @@
 import tkinter as tk
+import customtkinter # credit to Tom Schimansky
+customtkinter.set_appearance_mode("dark")  # Modes: "System" (standard), "Dark", "Light"
+customtkinter.set_default_color_theme("blue")  # Themes: "blue" (standard), "green", "dark-blue"
 
-window = tk.Tk()
+
+window = customtkinter.CTk()
 window.title("adaptPlayer")
 window.geometry("600x400")
 
+def button_callback():
+    print("Button click", combobox_1.get())
 
-label = tk.Label(text = "Creating a test desktop app")
-label.grid(column=0, row=0)
+
+def slider_callback(value):
+    progressbar_1.set(value)
+
+
+frame_1 = customtkinter.CTkFrame(master=window)
+frame_1.pack(pady=20, padx=60, fill="both", expand=True)
+
+label_1 = customtkinter.CTkLabel(master=frame_1, justify=tk.LEFT)
+label_1.pack(pady=12, padx=10)
+
+progressbar_1 = customtkinter.CTkProgressBar(master=frame_1)
+progressbar_1.pack(pady=12, padx=10)
+
+button_1 = customtkinter.CTkButton(master=frame_1, command=button_callback)
+button_1.pack(pady=12, padx=10)
+
+slider_1 = customtkinter.CTkSlider(master=frame_1, command=slider_callback, from_=0, to=1)
+slider_1.pack(pady=12, padx=10)
+slider_1.set(0.5)
+
+entry_1 = customtkinter.CTkEntry(master=frame_1, placeholder_text="CTkEntry")
+entry_1.pack(pady=12, padx=10)
+
+optionmenu_1 = customtkinter.CTkOptionMenu(frame_1, values=["Option 1", "Option 2", "Option 42 long long long..."])
+optionmenu_1.pack(pady=12, padx=10)
+optionmenu_1.set("CTkOptionMenu")
+
+combobox_1 = customtkinter.CTkComboBox(frame_1, values=["Option 1", "Option 2", "Option 42 long long long..."])
+combobox_1.pack(pady=12, padx=10)
+optionmenu_1.set("CTkComboBox")
+
+checkbox_1 = customtkinter.CTkCheckBox(master=frame_1)
+checkbox_1.pack(pady=12, padx=10)
+
+radiobutton_var = tk.IntVar(value=1)
+
+radiobutton_1 = customtkinter.CTkRadioButton(master=frame_1, variable=radiobutton_var, value=1)
+radiobutton_1.pack(pady=12, padx=10)
+
+radiobutton_2 = customtkinter.CTkRadioButton(master=frame_1, variable=radiobutton_var, value=2)
+radiobutton_2.pack(pady=12, padx=10)
+
+switch_1 = customtkinter.CTkSwitch(master=frame_1)
+switch_1.pack(pady=12, padx=10)
+
 window.mainloop()
+label = tk.Label(text = "Creating a test desktop window")
+label.grid(column=0, row=0)
