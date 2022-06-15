@@ -12,6 +12,7 @@ namespace player
 {
     public partial class Form1 : Form
     {
+        private Mp3Player mp3Player = new Mp3Player();
         public Form1()
         {
             InitializeComponent();
@@ -21,7 +22,7 @@ namespace player
         #region subButtons
         private void button2_Click(object sender, EventArgs e)
         {
-            // Codes
+            openChildForm(new Form2());
             hideSubMenu();
         }
         private void button3_Click(object sender, EventArgs e)
@@ -35,10 +36,18 @@ namespace player
             hideSubMenu();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnImport_Click(object sender, EventArgs e)
         {
             // Codes
             hideSubMenu();
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "Mp3 Files|*.mp3";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    mp3Player.open(ofd.FileName);
+                }
+            }
         }
 
 
@@ -162,6 +171,17 @@ namespace player
             panelChildForm.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+        }
+
+        private void btnEqualizer_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Form3());
+            hideSubMenu();
+        }
+
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            mp3Player.play();
         }
     }
 }

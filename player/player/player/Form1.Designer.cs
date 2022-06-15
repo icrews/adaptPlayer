@@ -32,7 +32,6 @@
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.btnHelp = new System.Windows.Forms.Button();
             this.panelToolsSubmenu = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
@@ -46,19 +45,25 @@
             this.button10 = new System.Windows.Forms.Button();
             this.btnPlaylist = new System.Windows.Forms.Button();
             this.panelMediaSubmenu = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnImport = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnMedia = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelPlayer = new System.Windows.Forms.Panel();
+            this.btnSettings = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnPlay = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelSideMenu.SuspendLayout();
             this.panelToolsSubmenu.SuspendLayout();
             this.panelPlaylistSubmenu.SuspendLayout();
             this.panelMediaSubmenu.SuspendLayout();
+            this.panelPlayer.SuspendLayout();
             this.panelChildForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -101,7 +106,6 @@
             // panelToolsSubmenu
             // 
             this.panelToolsSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panelToolsSubmenu.Controls.Add(this.flowLayoutPanel1);
             this.panelToolsSubmenu.Controls.Add(this.button13);
             this.panelToolsSubmenu.Controls.Add(this.button14);
             this.panelToolsSubmenu.Controls.Add(this.button15);
@@ -111,13 +115,6 @@
             this.panelToolsSubmenu.Name = "panelToolsSubmenu";
             this.panelToolsSubmenu.Size = new System.Drawing.Size(233, 218);
             this.panelToolsSubmenu.TabIndex = 7;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 100);
-            this.flowLayoutPanel1.TabIndex = 4;
             // 
             // button13
             // 
@@ -213,6 +210,7 @@
             this.btnEqualizer.Text = "Equalizer";
             this.btnEqualizer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEqualizer.UseVisualStyleBackColor = true;
+            this.btnEqualizer.Click += new System.EventHandler(this.btnEqualizer_Click);
             // 
             // panelPlaylistSubmenu
             // 
@@ -310,7 +308,7 @@
             // panelMediaSubmenu
             // 
             this.panelMediaSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panelMediaSubmenu.Controls.Add(this.button5);
+            this.panelMediaSubmenu.Controls.Add(this.btnImport);
             this.panelMediaSubmenu.Controls.Add(this.button4);
             this.panelMediaSubmenu.Controls.Add(this.button3);
             this.panelMediaSubmenu.Controls.Add(this.button2);
@@ -320,21 +318,21 @@
             this.panelMediaSubmenu.Size = new System.Drawing.Size(233, 218);
             this.panelMediaSubmenu.TabIndex = 2;
             // 
-            // button5
+            // btnImport
             // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.LightGray;
-            this.button5.Location = new System.Drawing.Point(0, 165);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(233, 53);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "button5";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnImport.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnImport.FlatAppearance.BorderSize = 0;
+            this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImport.ForeColor = System.Drawing.Color.LightGray;
+            this.btnImport.Location = new System.Drawing.Point(0, 165);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnImport.Size = new System.Drawing.Size(233, 53);
+            this.btnImport.TabIndex = 3;
+            this.btnImport.Text = "Import Music";
+            this.btnImport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // button4
             // 
@@ -411,11 +409,92 @@
             // panelPlayer
             // 
             this.panelPlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.panelPlayer.Controls.Add(this.btnSettings);
+            this.panelPlayer.Controls.Add(this.btnNext);
+            this.panelPlayer.Controls.Add(this.btnPlay);
+            this.panelPlayer.Controls.Add(this.btnBack);
+            this.panelPlayer.Controls.Add(this.btnRefresh);
             this.panelPlayer.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelPlayer.Location = new System.Drawing.Point(250, 446);
             this.panelPlayer.Name = "panelPlayer";
             this.panelPlayer.Size = new System.Drawing.Size(684, 115);
             this.panelPlayer.TabIndex = 1;
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
+            this.btnSettings.Location = new System.Drawing.Point(535, 34);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(93, 43);
+            this.btnSettings.TabIndex = 0;
+            this.btnSettings.Text = " ";
+            this.btnSettings.UseVisualStyleBackColor = true;
+            // 
+            // btnNext
+            // 
+            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
+            this.btnNext.Location = new System.Drawing.Point(415, 34);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(93, 43);
+            this.btnNext.TabIndex = 0;
+            this.btnNext.Text = " ";
+            this.btnNext.UseVisualStyleBackColor = true;
+            // 
+            // btnPlay
+            // 
+            this.btnPlay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPlay.FlatAppearance.BorderSize = 0;
+            this.btnPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlay.Image = ((System.Drawing.Image)(resources.GetObject("btnPlay.Image")));
+            this.btnPlay.Location = new System.Drawing.Point(299, 34);
+            this.btnPlay.Name = "btnPlay";
+            this.btnPlay.Size = new System.Drawing.Size(93, 43);
+            this.btnPlay.TabIndex = 0;
+            this.btnPlay.Text = " ";
+            this.btnPlay.UseVisualStyleBackColor = true;
+            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
+            // 
+            // btnBack
+            // 
+            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.Location = new System.Drawing.Point(187, 34);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(93, 43);
+            this.btnBack.TabIndex = 0;
+            this.btnBack.Text = " ";
+            this.btnBack.UseVisualStyleBackColor = true;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
+            this.btnRefresh.Location = new System.Drawing.Point(74, 34);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(93, 43);
+            this.btnRefresh.TabIndex = 0;
+            this.btnRefresh.Text = " ";
+            this.btnRefresh.UseVisualStyleBackColor = true;
             // 
             // panelChildForm
             // 
@@ -451,12 +530,14 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.MinimumSize = new System.Drawing.Size(950, 600);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panelSideMenu.ResumeLayout(false);
             this.panelToolsSubmenu.ResumeLayout(false);
             this.panelPlaylistSubmenu.ResumeLayout(false);
             this.panelMediaSubmenu.ResumeLayout(false);
+            this.panelPlayer.ResumeLayout(false);
             this.panelChildForm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -470,7 +551,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnMedia;
         private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnPlaylist;
@@ -487,10 +568,14 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button btnHelp;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panelPlayer;
         private System.Windows.Forms.Panel panelChildForm;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnPlay;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
 

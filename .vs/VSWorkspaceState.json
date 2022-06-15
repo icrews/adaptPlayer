@@ -1,7 +1,14 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\adaptPlayer",
+    "\\adaptPlayer\\bin",
+    "\\player",
+    "\\player\\player",
+    "\\player\\player\\player",
+    "\\player\\player\\player\\bin",
+    "\\player\\player\\player\\obj"
   ],
-  "SelectedNode": "\\player",
+  "SelectedNode": "\\adaptPlayer\\obj",
   "PreviewInSolutionExplorer": false
 }

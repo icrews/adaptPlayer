@@ -9,3 +9,5 @@ C:\Users\icrew\adaptPlayer\player\player\player\obj\Debug\player.csproj.Generate
 C:\Users\icrew\adaptPlayer\player\player\player\obj\Debug\player.csproj.CoreCompileInputs.cache
 C:\Users\icrew\adaptPlayer\player\player\player\obj\Debug\player.exe
 C:\Users\icrew\adaptPlayer\player\player\player\obj\Debug\player.pdb
+C:\Users\icrew\adaptPlayer\player\player\player\obj\Debug\player.Form2.resources
+C:\Users\icrew\adaptPlayer\player\player\player\obj\Debug\player.Form3.resources
