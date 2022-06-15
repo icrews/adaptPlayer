@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\pinto\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\pinto\\.nuget\\packages",
+      "C:\\Users\\Ben ENVY\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Ben ENVY\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {

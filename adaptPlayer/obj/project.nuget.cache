@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "YiqOR6xm5fMFKFUSVO3dMsEQXA0n6nSVjpmMB0PRbc+flLxoO+byZvj+dIMk7GxTgpN6CssOdFiqKZNoh99L/w==",
+  "dgSpecHash": "RD+zHHHCKwWB0QqHQ4Hs7tUvfhyhHnBhLNVPwhKlMv9K01pfBLcxyIDBK8mXVvW4RXSn559YY0fAYiB4hn5DDQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pinto\\source\\repos\\adaptPlayer\\adaptPlayer\\adaptPlayer.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Ben ENVY\\Source\\Repos\\adaptPlayer\\adaptPlayer\\adaptPlayer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ben ENVY\\.nuget\\packages\\embedio\\3.4.3\\embedio.3.4.3.nupkg.sha512",
+    "C:\\Users\\Ben ENVY\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Ben ENVY\\.nuget\\packages\\spotifyapi.web\\6.2.2\\spotifyapi.web.6.2.2.nupkg.sha512",
+    "C:\\Users\\Ben ENVY\\.nuget\\packages\\spotifyapi.web.auth\\6.2.2\\spotifyapi.web.auth.6.2.2.nupkg.sha512",
+    "C:\\Users\\Ben ENVY\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
+    "C:\\Users\\Ben ENVY\\.nuget\\packages\\unosquare.swan.lite\\3.0.0\\unosquare.swan.lite.3.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
