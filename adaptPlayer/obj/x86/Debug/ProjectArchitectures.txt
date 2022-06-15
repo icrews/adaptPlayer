@@ -1,1 +1,0 @@
-D:\dev\adaptPlayer\adaptPlayer\adaptPlayer.csproj;x86
