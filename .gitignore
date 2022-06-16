@@ -6,7 +6,8 @@
 *.lo
 *.o
 *.obj
-
+*.cache
+*.pyc
 # Precompiled Headers
 *.gch
 *.pch
