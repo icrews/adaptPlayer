@@ -23,14 +23,15 @@ embeded_code = ''
 #     progressbar_1.set(value)
 
 
+def button_function():
+    print("Login pressed")
+
+
 class App(customtkinter.CTk):
 
     APP_NAME = "DaddyApp"
     WIDTH = 350
     HEIGHT = 1200
-
-    def close_button(self):
-        self.destroy()
 
     def __init__(self, *args, **kwargs):
         # Setup
@@ -51,13 +52,16 @@ class App(customtkinter.CTk):
         self.geometry(f"{App.WIDTH}x{App.HEIGHT}")
         # self.attributes('-alpha', 0.5) # Transparent Window
         self.overrideredirect(True)
-        self.geometry("350x1200+100+100")
 
         image = Image.open(PATH + "/images/OratorBG.png").resize((self.WIDTH, self.HEIGHT))
         self.bg_image = ImageTk.PhotoImage(image)
         self.image_label = tkinter.Label(master=self, image=self.bg_image)
         self.image_label.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
 
+
+        self.button_2 = customtkinter.CTkButton(self, border_color="#D35B58", fg_color="#c0392b", hover_color="#e74c3c",
+                                              image=close_image, text="", command=self.close_button)
+        self.button_2.pack(side="right", padx=40, pady=40)
         self.button = customtkinter.CTkButton(self, border_color="#D35B58", fg_color="#c0392b", hover_color="#e74c3c",
                                               image=refresh_image, text="", command=self.create_new_window)
         self.button.pack(side="top", padx=40, pady=40)
@@ -74,9 +78,8 @@ class App(customtkinter.CTk):
         
 
 
-
-    def button_function(self):
-        print("Login pressed")
+    def close_button(self):
+        self.destroy()
 
     def on_closing(self, event=0):
         self.destroy()
