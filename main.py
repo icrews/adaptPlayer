@@ -1,4 +1,6 @@
 from tkinter import simpledialog
+
+from cefpython3 import cefpython as cef
 import spotipy
 import webbrowser
 import tkinter
