@@ -36,6 +36,7 @@ class App(customtkinter.CTk):
         back_image = ImageTk.PhotoImage(Image.open(PATH + "/images/back.png"))
         refresh_image = ImageTk.PhotoImage(Image.open(PATH + "/images/rotate.png"))
         setting_image = ImageTk.PhotoImage(Image.open(PATH + "/images/setting.png"))
+        close_image = ImageTk.PhotoImage(Image.open(PATH + "/images/close.png"))
 
         # Size Control
         self.title(App.APP_NAME)
@@ -52,9 +53,13 @@ class App(customtkinter.CTk):
         self.image_label = tkinter.Label(master=self, image=self.bg_image)
         self.image_label.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
 
-        self.button = customtkinter.CTkButton(self, border_color="#D35B58", fg_color="#c0392b", hover_color="#e74c3c", image=refresh_image, text="", command=self.create_new_window)
+        self.button = customtkinter.CTkButton(self, border_color="#D35B58", fg_color="#c0392b", hover_color="#e74c3c",
+                                              image=refresh_image, text="", command=self.create_new_window)
         self.button.pack(side="top", padx=40, pady=40)
 
+        self.button = customtkinter.CTkButton(self, border_color="#D35B58", fg_color="#c0392b", hover_color="#e74c3c",
+                                              image=close_image, text="", command=self.close_button())
+        self.button.pack(side="right", padx=40, pady=40)
 
 
 
