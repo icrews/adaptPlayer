@@ -124,7 +124,6 @@ def generatePlaylist():
     list_of_song_names = []
     for tracks in track_list:
         list_of_song_names.append(tracks['name'])
-        print(tracks['name'])
         list_of_songs.append(tracks['uri'])
     #print(json.dumps(newPlaylist,indent=4, sort_keys=4))
 
@@ -167,7 +166,7 @@ try:
     spotifyObj = spotipy.Spotify(auth_manager=auth_manager)
     auth_url = auth_manager.get_authorize_url()
     #webbrowser.open_new_tab(auth_url)
-    #auth_manager.get_auth_response()
+    auth_manager.get_auth_response()
     # msg = "Please copy and paste the URL you were redirected to after clicking the green \"Agree\" button."
     # ROOT = tk.Tk()
     # ROOT.withdraw()
@@ -175,18 +174,10 @@ try:
     # #title="Validation", prompt=msg
     # print(spotifyObj.me()['id'])
     generatePlaylist()
-except:
+except KeyboardInterrupt:
     print("I messed up.")
 
 
 if __name__ == "__main__":
     app = App()
     app.start()
-
-
-
-
-
-
-
-
