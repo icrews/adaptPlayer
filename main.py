@@ -18,8 +18,9 @@ import json
 # customtkinter.set_default_color_theme("blue")  # Themes: "blue" (standard), "green", "dark-blue"
 
 PATH = os.path.dirname(os.path.realpath(__file__))
-embeded_code = ''
+embedded_code = ''
 
+url = ''
 
 # def button_callback():
 #     print("Button click", combobox_1.get())
@@ -91,6 +92,7 @@ class App(customtkinter.CTk):
         self.button_3.pack(side="bottom", padx=40, pady=40)
 
 
+
     def close_button(self):
         self.destroy()
 
@@ -106,14 +108,14 @@ class App(customtkinter.CTk):
         PathPy = tkinter.filedialog.askopenfilename(title="Open a file", filetypes=[('PYTHON file', '.py')])
         os.system('%s %s' % (sys.executable, PathPy))
 
-
-
     def start(self):
         self.mainloop()
 
+
 # Generate playlist based off of genres
 def generatePlaylist():
-    global embeded_code
+    global embedded_code
+    global url
     # Generate new playlist based on cpu usage
     usage = diagnostic_to_metric.genre_from_cpu()
     newPlaylist = spotifyObj.recommendations(seed_genres=usage,limit=25)
@@ -149,8 +151,10 @@ def generatePlaylist():
 
     # Retrieve embedded code of playlist
     url = prePlaylists['items'][0]['external_urls']['spotify']
-    embeded_code = f'<iframe style=\"border-radius:12px\" src=\"{url}\" width=\"100%\" height=\"380\" frameBorder=\"0\" allowfullscreen=\"\" allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"></iframe>'
-
+    newurl = "https://open.spotify.com/embed/playlist" + url[33:]
+    print (newurl)
+    embedded_code = f'<iframe style=\"border-radius:12px\" src=\"{newurl}?utm_source=generator\" width=\"100%\" height=\"380\" frameBorder=\"0\" allowfullscreen=\"\" allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"></iframe>'
+    print(f"New Embedded Code iFrame: {embedded_code}")
 
 # Spotify API connection and setup
 # Be sure to set environment variables with API client ids.
@@ -163,7 +167,11 @@ os.environ['SPOTIPY_REDIRECT_URI'] = 'https://google.com/'
 #os.environ['SPOTIPY_CLIENT_SECRET'] = ''
 #os.environ['SPOTIFY_CLIENT_ID'] = ''
 try:
-    auth_manager = spotipy.oauth2.SpotifyOAuth(show_dialog=True, scope=scope)
+
+    auth_manager = spotipy.oauth2.SpotifyOAuth(show_dialog=True, scope=scope,
+                                                       client_id="82ecbf583a174ae29750769f4f49853d",
+                                                       client_secret="e5ca52f8663c44c593447e33dc7426d5",
+                                                       redirect_uri="https://google.com/")
     spotifyObj = spotipy.Spotify(auth_manager=auth_manager)
     auth_url = auth_manager.get_authorize_url()
     #webbrowser.open_new_tab(auth_url)
@@ -175,6 +183,13 @@ try:
     # #title="Validation", prompt=msg
     # print(spotifyObj.me()['id'])
     generatePlaylist()
+
+    f = open("playlist.html", "w")
+    htmlWrite = "<!DOCTYPE html>\n<html lang=\"en\"><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"></head>\n<body>\n"
+    htmlWrite += embedded_code
+    htmlWrite += "\n</body>\n</html>"
+    f.write(htmlWrite)
+    f.close()
 except:
     print("I messed up.")
 
