@@ -14,7 +14,7 @@ def get_mac_sys_info():
     print("mac")
     # print("cpu usage percentage: %s" %  psutil.cpu_percent())
     # print(psutil.cpu_stats())
-    # print(psutil.cpu_freq())
+    print(psutil.cpu_freq())
     return  psutil.cpu_percent()
 
 def get_windows_sys_info():
